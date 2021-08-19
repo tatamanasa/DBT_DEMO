@@ -10,6 +10,6 @@
     )
 }}
 
-select * from PUBLIC.PROD.ORDERS;
+select * from {{ref('ordes_mod')};
 
 {% endsnapshot %}
