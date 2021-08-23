@@ -2,14 +2,14 @@
 {{
     config(
       
-      target_schema='PUBLIC',
+      target_schema='DBT_TATAMANASA',
       unique_key='ID',
 
-      strategy='timestamp',
-      updated_at='UPDATED_AT',
+      strategy='check',
+      check_cols=['STATUS']
     )
 }}
 
-select * from {{ ref( 'dbt_demo') }}
+select * from {{ ref('orders_mod1')}}
 
 {% endsnapshot %}
